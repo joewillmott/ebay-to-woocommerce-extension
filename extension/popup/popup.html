@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eBay Product Collector</title>
+  <link rel="stylesheet" href="../styles/popup.css" />
+</head>
+<body>
+  <main class="popup">
+    <header class="popup__header">
+      <div>
+        <h1>eBay Product Collector</h1>
+        <p class="subtitle">Review, edit, and import in seconds.</p>
+      </div>
+      <button id="openSettings" class="secondary">Settings</button>
+    </header>
+
+    <section id="status" class="status status--info">Scraping the current eBay listing…</section>
+
+    <form id="importForm" class="hidden">
+      <label>
+        Product title
+        <input id="title" type="text" required />
+      </label>
+
+      <label>
+        Description (HTML supported)
+        <textarea id="description" rows="6"></textarea>
+      </label>
+
+      <div class="grid">
+        <label>
+          Price
+          <input id="price" type="number" step="0.01" min="0" />
+        </label>
+        <label>
+          Currency
+          <input id="currency" type="text" maxlength="3" />
+        </label>
+        <label>
+          Stock quantity
+          <input id="quantity" type="number" min="0" />
+        </label>
+        <label class="checkbox">
+          <input id="inStock" type="checkbox" /> In stock
+        </label>
+      </div>
+
+      <label>
+        Image URLs (comma separated)
+        <textarea id="images" rows="3"></textarea>
+      </label>
+
+      <button type="submit" class="primary" id="importButton">
+        Import to WooCommerce
+      </button>
+    </form>
+  </main>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>
